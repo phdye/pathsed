@@ -1,0 +1,103 @@
+Script started on 2025-08-19 10:13:21-04:00 [COMMAND="set -x && make test" TERM="screen.xterm-256color" TTY="/dev/pty3" COLUMNS="121" LINES="40"]
++ make test
+python3.2 -m unittest discover tests/unit/ -v
+test_absolute_path (test_components.TestPathComponents)
+Test handling of absolute paths. ... ok
+test_edge_cases (test_components.TestPathComponents)
+Test edge cases. ... ok
+test_filename_with_path (test_components.TestPathComponents)
+Test parsing a filename with directory path. ... ok
+test_filename_without_extension (test_components.TestPathComponents)
+Test parsing a filename without extension. ... ok
+test_get_component (test_components.TestPathComponents)
+Test getting components by name. ... ok
+test_hidden_file (test_components.TestPathComponents)
+Test parsing hidden files (starting with dot). ... ok
+test_invalid_component (test_components.TestPathComponents)
+Test error handling for invalid components. ... ok
+test_multiple_dots (test_components.TestPathComponents)
+Test filename with multiple dots. ... ok
+test_set_component (test_components.TestPathComponents)
+Test setting components. ... ok
+test_simple_filename (test_components.TestPathComponents)
+Test parsing a simple filename. ... ok
+test_discover_files (test_discovery.TestFileDiscovery)
+Test file discovery. ... ok
+test_extension_normalization (test_discovery.TestFileDiscovery)
+Test extension normalization in FileFilter. ... ok
+test_file_filter_combinations (test_discovery.TestFileDiscovery)
+Test combining multiple filter criteria. ... ok
+test_file_filter_extensions (test_discovery.TestFileDiscovery)
+Test filtering by file extensions. ... ok
+test_file_filter_ignored_files (test_discovery.TestFileDiscovery)
+Test filtering of ignored files. ... ok
+test_file_filter_types (test_discovery.TestFileDiscovery)
+Test filtering by file types. ... ok
+test_format_file_table (test_discovery.TestFileDiscovery)
+Test file table formatting. ... ok
+test_get_file_extension (test_discovery.TestFileDiscovery)
+Test file extension extraction. ... ok
+test_get_file_type (test_discovery.TestFileDiscovery)
+Test file type detection. ... ok
+test_is_ignored_path (test_discovery.TestFileDiscovery)
+Test ignored path detection. ... ok
+test_nonexistent_files (test_discovery.TestFileDiscovery)
+Test handling of nonexistent files. ... Warning: No files found matching: /nonexistent/file.txt
+ok
+test_progress_indicator (test_discovery.TestFileDiscovery)
+Test progress indicator functionality. ... ok
+test_case_insensitive (test_regex_engine.TestRegexEngine)
+Test case-insensitive replacement with 'i' flag. ... ok
+test_complex_patterns (test_regex_engine.TestRegexEngine)
+Test complex regex patterns. ... ok
+test_empty_parts (test_regex_engine.TestRegexEngine)
+Test handling of empty pattern or replacement. ... ok
+test_escaped_delimiter (test_regex_engine.TestRegexEngine)
+Test parsing with escaped delimiters. ... ok
+test_flags_combinations (test_regex_engine.TestRegexEngine)
+Test various flag combinations. ... ok
+test_global_replacement (test_regex_engine.TestRegexEngine)
+Test global replacement with 'g' flag. ... ok
+test_invalid_regex (test_regex_engine.TestRegexEngine)
+Test error handling for invalid regex. ... ok
+test_invalid_syntax (test_regex_engine.TestRegexEngine)
+Test error handling for invalid syntax. ... ok
+test_parse_sed_expression (test_regex_engine.TestRegexEngine)
+Test parsing s/// expressions. ... ok
+test_parse_with_different_delimiter (test_regex_engine.TestRegexEngine)
+Test parsing with different delimiters. ... ok
+test_regex_pattern (test_regex_engine.TestRegexEngine)
+Test regex pattern matching. ... ok
+test_replacement_groups (test_regex_engine.TestRegexEngine)
+Test replacement with capture groups. ... ok
+test_simple_replacement (test_regex_engine.TestRegexEngine)
+Test simple string replacement. ... ok
+test_utils (unittest.loader.ModuleImportFailure) ... ERROR
+======================================================================
+ERROR: test_utils (unittest.loader.ModuleImportFailure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.2/unittest/case.py", line 370, in _executeTestPart
+    function()
+  File "/usr/lib/python3.2/unittest/loader.py", line 32, in testFailure
+    raise exception
+ImportError: Failed to import test module: test_utils
+Traceback (most recent call last):
+  File "/usr/lib/python3.2/unittest/loader.py", line 261, in _find_tests
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.2/unittest/loader.py", line 239, in _get_module_from_name
+    __import__(name)
+  File "/home/phdyex/my-repos/pathsed/tests/unit/test_utils.py", line 12, in <module>
+    from pathsed.utils.validators import (
+  File "/home/phdyex/my-repos/pathsed/src/pathsed/utils/__init__.py", line 7, in <module>
+    from .helpers import normalize_path, safe_filename
+  File "/home/phdyex/my-repos/pathsed/src/pathsed/utils/helpers.py", line 123
+    return re.sub(f'([{re.escape(special_chars)}])', r'\\\1', text)
+                                                  ^
+SyntaxError: invalid syntax
+----------------------------------------------------------------------
+Ran 36 tests in 0.077s
+FAILED (errors=1)
+make: *** [Makefile:23: test] Error 1
+Script done on 2025-08-19 10:13:21-04:00 [COMMAND_EXIT_CODE="2"]
+

@@ -1,0 +1,34 @@
+Script started on 2025-08-19 07:10:25-04:00 [COMMAND="set -x && python3.2 -m pytest tests" TERM="screen.xterm-256color" TTY="/dev/pty3" COLUMNS="121" LINES="40"]
++ python3.2 -m pytest tests
+================================================== test session starts ==================================================
+platform cygwin -- Python 3.2.5, pytest-2.9.2, py-1.4.29, pluggy-0.3.1
+rootdir: /home/phdyex/my-repos/pathsed, inifile: 
+collecting 0 items
+collecting 8 items
+collecting 8 items
+collecting 15 items
+collecting 15 items
+collecting 24 items
+collecting 24 items
+collected 24 items 
+tests/test_components.py ........
+tests/test_discovery.py ..F....
+tests/test_regex_engine.py .........
+======================================================= FAILURES ========================================================
+___________________________________ TestFileDiscovery.test_file_filter_ignored_files ____________________________________
+self = <test_discovery.TestFileDiscovery testMethod=test_file_filter_ignored_files>
+    def test_file_filter_ignored_files(self):
+        """Test filtering of ignored files."""
+        file_filter = FileFilter(include_ignored=False)
+    
+        temp_file = os.path.join(self.test_dir, 'temp.tmp')
+        hidden_file = os.path.join(self.test_dir, '.hidden')
+        normal_file = os.path.join(self.test_dir, 'test.txt')
+    
+        self.assertFalse(file_filter.matches(temp_file))
+>       self.assertFalse(file_filter.matches(hidden_file))
+E       AssertionError: True is not false
+tests/test_discovery.py:100: AssertionError
+========================================== 1 failed, 23 passed in 0.16 seconds ==========================================
+Script done on 2025-08-19 07:10:26-04:00 [COMMAND_EXIT_CODE="1"]
+

@@ -1,0 +1,65 @@
+Script started on 2025-08-19 08:04:58-04:00 [COMMAND="set -x && make test" TERM="screen.xterm-256color" TTY="/dev/pty3" COLUMNS="121" LINES="40"]
++ make test
+python3.2 -m unittest discover tests/ -v
+test_filename_with_path (test_components.TestPathComponents)
+Test parsing a filename with directory path. ... ok
+test_filename_without_extension (test_components.TestPathComponents)
+Test parsing a filename without extension. ... ok
+test_get_component (test_components.TestPathComponents)
+Test getting components by name. ... ok
+test_hidden_file (test_components.TestPathComponents)
+Test parsing hidden files (starting with dot). ... ok
+test_invalid_component (test_components.TestPathComponents)
+Test error handling for invalid components. ... ok
+test_multiple_dots (test_components.TestPathComponents)
+Test filename with multiple dots. ... ok
+test_set_component (test_components.TestPathComponents)
+Test setting components. ... ok
+test_simple_filename (test_components.TestPathComponents)
+Test parsing a simple filename. ... ok
+test_discover_files (test_discovery.TestFileDiscovery)
+Test file discovery. ... ok
+test_file_filter_extensions (test_discovery.TestFileDiscovery)
+Test filtering by file extensions. ... ok
+test_file_filter_ignored_files (test_discovery.TestFileDiscovery)
+Test filtering of ignored files. ... FAIL
+test_file_filter_types (test_discovery.TestFileDiscovery)
+Test filtering by file types. ... ok
+test_format_file_table (test_discovery.TestFileDiscovery)
+Test file table formatting. ... ok
+test_get_file_extension (test_discovery.TestFileDiscovery)
+Test file extension extraction. ... ok
+test_get_file_type (test_discovery.TestFileDiscovery)
+Test file type detection. ... ok
+test_case_insensitive (test_regex_engine.TestRegexEngine)
+Test case-insensitive replacement with 'i' flag. ... ok
+test_escaped_delimiter (test_regex_engine.TestRegexEngine)
+Test parsing with escaped delimiters. ... ok
+test_global_replacement (test_regex_engine.TestRegexEngine)
+Test global replacement with 'g' flag. ... ok
+test_invalid_regex (test_regex_engine.TestRegexEngine)
+Test error handling for invalid regex. ... ok
+test_invalid_syntax (test_regex_engine.TestRegexEngine)
+Test error handling for invalid syntax. ... ok
+test_parse_sed_expression (test_regex_engine.TestRegexEngine)
+Test parsing s/// expressions. ... ok
+test_parse_with_different_delimiter (test_regex_engine.TestRegexEngine)
+Test parsing with different delimiters. ... ok
+test_regex_pattern (test_regex_engine.TestRegexEngine)
+Test regex pattern matching. ... ok
+test_simple_replacement (test_regex_engine.TestRegexEngine)
+Test simple string replacement. ... ok
+======================================================================
+FAIL: test_file_filter_ignored_files (test_discovery.TestFileDiscovery)
+Test filtering of ignored files.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/phdyex/my-repos/pathsed/tests/test_discovery.py", line 100, in test_file_filter_ignored_files
+    self.assertFalse(file_filter.matches(hidden_file))
+AssertionError: True is not false
+----------------------------------------------------------------------
+Ran 24 tests in 0.054s
+FAILED (failures=1)
+make: *** [Makefile:23: test] Error 1
+Script done on 2025-08-19 08:04:58-04:00 [COMMAND_EXIT_CODE="2"]
+
